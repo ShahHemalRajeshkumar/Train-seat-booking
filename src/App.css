@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+form {
+  margin: 20px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: lightgreen;
+  border: none;
+  cursor: pointer;
+}
+
+.seat.booked {
+  background-color: red;
+  cursor: not-allowed;
+}
+
+.seat.available:hover {
+  background-color: yellow;
+}
+@media (max-width: 768px) {
+  body {
+    margin: 10px; 
+  }
+
+  .seat-grid {
+    grid-template-columns: repeat(5, 30px); 
+  }
+
+  .seat {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seat-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .seat {
+    width: 25px;
+    height: 25px;
+  }
+}
+
